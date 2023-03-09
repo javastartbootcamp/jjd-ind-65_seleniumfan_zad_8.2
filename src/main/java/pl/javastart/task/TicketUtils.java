@@ -14,7 +14,7 @@ public class TicketUtils {
         try {
             type = TicketType.valueOf(scanner.nextLine().toUpperCase());
         } catch (IllegalArgumentException e) {
-            System.out.println("Podałeś nieprawidłowy typ biletu");
+            System.out.println("Podałeś nieprawidłowy typ biletu.");
         }
         return new Ticket(event, address, type);
     }

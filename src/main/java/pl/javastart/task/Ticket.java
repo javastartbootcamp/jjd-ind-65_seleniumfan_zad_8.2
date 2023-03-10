@@ -4,8 +4,8 @@ public class Ticket {
     private String event;
     private Address address;
     private TicketType type;
-    private double basicPrice = 100;
-    private double discount = 0.05;
+    private static final double BASIC_PRICE = 100;
+    private static final double DISCOUNT = 0.05;
     private int number;
     private static int counter = 1;
 
@@ -27,11 +27,11 @@ public class Ticket {
     void showFullInfo() {
         System.out.printf("#%d %s, wydarzenie: %s, adres: %s\n" +
                         "cena podstawowa %.2f zł, zniżka %.0f%%, cena finalna: %.2f zł\n",
-                number, type.getName(), event, address, basicPrice, (discount * 100), getPrice());
+                number, type.getName(), event, address, BASIC_PRICE, (DISCOUNT * 100), getPrice());
     }
 
     private double calculateDiscountPrice() {
-        return basicPrice - basicPrice * discount;
+        return BASIC_PRICE - BASIC_PRICE * DISCOUNT;
     }
 
     private double calculateDiscountPriceWithServiceFee() {
